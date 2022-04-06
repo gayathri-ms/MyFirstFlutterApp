@@ -6,13 +6,19 @@ class Detail extends StatelessWidget {
   final double right = 10;
   final double bottom = 10;
 
+  var args;
   final String _image = "assets/images/image1.jpg";
   final String _name = "Gayathri";
   final String _role = "Tech Intern";
   final String _location = "Tirupur";
   final String _college = "IIIT BBSR";
+
+  Detail(this.args);
+  // Detail(this._name, this._image, this._role, this._location, this._college);
+
   @override
   Widget build(BuildContext context) {
+    print(args);
     return Scaffold(
       appBar: AppBar(
         title: Text("Details of ${_name}"),

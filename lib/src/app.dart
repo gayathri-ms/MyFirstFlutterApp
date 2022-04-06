@@ -14,11 +14,15 @@ class App extends StatelessWidget {
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
+
     switch (settings.name) {
       case "/":
         return MaterialPageRoute(builder: (_) => Home());
       case "/second":
-        return MaterialPageRoute(builder: (_) => Detail());
+        if (args != null) {
+          return MaterialPageRoute(builder: (_) => Detail(args));
+        }
+        return _errorRoute();
       default:
         return _errorRoute();
     }
