@@ -12,8 +12,8 @@ class Eachcolumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-        child: new RaisedButton(
+        padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+        child: TextButton(
           onPressed: () {
             Navigator.of(context).pushNamed("/second", arguments: {
               "name": name,
@@ -26,9 +26,19 @@ class Eachcolumn extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                child: Image.asset(imagepath),
-              ),
+                  height: 200,
+                  width: 300,
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(
+                        image: AssetImage(imagepath), fit: BoxFit.cover),
+                  )),
+              //   child: Image.asset(
+              //     imagepath,
+              //     fit: BoxFit.cover,
+              //   ),
+              // ),
               Container(
                 child: Text(name),
               )

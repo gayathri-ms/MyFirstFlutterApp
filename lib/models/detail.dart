@@ -11,11 +11,10 @@ class Details {
 
   static List<Details> fetchAll() {
     return [
-      Details(1, "Vishal Mehta", "assets/images/image1.jpg", "Tech Intern",
+      Details(1, "Vishal Mehta", "assets/images/image1.jpg", "-",
           "Secunderabad", "-"),
-      Details(2, "Ash", "assets/images/image1.jpg", "Tech Intern",
-          "Secunderabad", "-"),
-      Details(3, "Gayathri M S", "assets/images/image1.jpg", "Tech Intern",
+      Details(2, "Ash", "assets/images/image2.jpg", "-", "Secunderabad", "-"),
+      Details(3, "Gayathri M S", "assets/images/image3.jpg", "Tech Intern",
           "Tirupur", "IIIT BBSR"),
       Details(4, "Chandana Reddy", "assets/images/image1.jpg", "Tech Intern",
           "Rourkela", "IIIT BBSR")

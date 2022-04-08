@@ -20,7 +20,10 @@ class Routes {
         return MaterialPageRoute(builder: (_) => Home());
       case "/second":
         if (args != null) {
-          return MaterialPageRoute(builder: (_) => Detail(args));
+          final argx = args as Map<String, dynamic>;
+          return MaterialPageRoute(
+            builder: (_) => Detail(argx),
+          );
         }
         return _errorRoute();
       default:
@@ -32,9 +35,9 @@ class Routes {
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
           appBar: AppBar(
-            title: Text("Error Page"),
+            title: const Text("Error Page"),
           ),
-          body: Center(child: Text("Error Page")));
+          body: const Center(child: Text("Error Page")));
     });
   }
 }

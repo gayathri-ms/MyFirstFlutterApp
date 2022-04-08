@@ -6,22 +6,15 @@ class Detail extends StatelessWidget {
   final double right = 10;
   final double bottom = 10;
 
-  var args;
-  final String _image = "assets/images/image1.jpg";
-  final String _name = "Gayathri";
-  final String _role = "Tech Intern";
-  final String _location = "Tirupur";
-  final String _college = "IIIT BBSR";
+  Map<String, dynamic> args;
 
   Detail(this.args);
-  // Detail(this._name, this._image, this._role, this._location, this._college);
 
   @override
   Widget build(BuildContext context) {
-    print(args);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Details of ${_name}"),
+        title: Text("Details of ${args['name']}"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -30,28 +23,28 @@ class Detail extends StatelessWidget {
           Container(
             height: 250,
             width: 250,
-            padding: EdgeInsets.fromLTRB(20, 10, 10, 10),
+            padding: const EdgeInsets.fromLTRB(20, 10, 10, 10),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              image:
-                  DecorationImage(image: AssetImage(_image), fit: BoxFit.fill),
+              image: DecorationImage(
+                  image: AssetImage(args['image']), fit: BoxFit.fill),
             ),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(left, 30, right, bottom),
-            child: Text("Name : $_name"),
+            child: Text("Name : ${args['name']}"),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-            child: Text("Role : ${_role}"),
+            child: Text("Role : ${args['role']}"),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-            child: Text("Location : ${_location}"),
+            child: Text("Location : ${args['location']}"),
           ),
           Container(
             padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-            child: Text("College : ${_college}"),
+            child: Text("College : ${args['college']}"),
           )
         ],
       ),

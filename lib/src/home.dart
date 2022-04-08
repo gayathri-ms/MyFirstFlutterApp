@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
     final detail = Details.fetchAll();
     return Scaffold(
       appBar: AppBar(
-        title: Text("MittArvians Details"),
+        title: const Text("MittArvians Details"),
       ),
       body: ListView(
         children: detail
