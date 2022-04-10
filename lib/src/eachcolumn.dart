@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Eachcolumn extends StatelessWidget {
@@ -30,7 +32,14 @@ class Eachcolumn extends StatelessWidget {
                   width: 300,
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   decoration: BoxDecoration(
-                    shape: BoxShape.rectangle,
+                    // shape: BoxShape.rectangle,
+                    border: Border.all(
+                        // color: const Color.fromARGB(255, 29, 31, 33), width: 4),
+                        color: Colors.white,
+                        width: 4),
+                    borderRadius: const BorderRadius.all(Radius.circular(
+                            10.0) //                 <--- border radius here
+                        ),
                     image: DecorationImage(
                         image: AssetImage(imagepath), fit: BoxFit.cover),
                   )),
@@ -40,7 +49,14 @@ class Eachcolumn extends StatelessWidget {
               //   ),
               // ),
               Container(
-                child: Text(name),
+                padding: const EdgeInsets.fromLTRB(0, 10, 0, 5),
+                child: Text(
+                  name,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400),
+                ),
               )
             ],
           ),
